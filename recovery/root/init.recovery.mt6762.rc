@@ -1,9 +1,13 @@
 import /init.recovery.microtrust.rc
+import /init.recovery.prepdecrypt.rc
 
-# on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
-on fs
+#on property:ro.crypto.state=encrypted && property:twrp.apex.loaded=true
+#    start prepdecrypt
+
+#    setprop crypto.ready 1
+on property:ro.crypto.ready 1
     install_keyring
-    setprop crypto.ready 1
+
 
 service capi-2-0 /vendor/bin/hw/vendor.microtrust.hardware.capi@2.0-service
     user root
