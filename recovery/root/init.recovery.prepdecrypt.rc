@@ -2,8 +2,9 @@
 # Including that prop prevents decryption services from loading when entering fastbootd
 
 #on property:ro.crypto.state=encrypted && property:twrp.apex.loaded=true
-on fs
-    start prepdecrypt
+#on fs
+#    setprop ro.crypto.type file
+#    start prepdecrypt
 
 # NOTE: In pre-Android-10 trees using the latest "prepdecrypt" script, the vendor
 # services should be placed in the TWRP ramdisk in the same folder as in stock
