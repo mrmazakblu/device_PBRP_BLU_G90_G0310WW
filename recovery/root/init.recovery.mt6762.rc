@@ -4,7 +4,7 @@ import /init.recovery.prepdecrypt.rc
 on fs
     install_keyring
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
-    start prepdecrypt
+    setprop crypto.ready 1
 
 on boot
     # Enable Power modes and set the CPU Freq Sampling rates

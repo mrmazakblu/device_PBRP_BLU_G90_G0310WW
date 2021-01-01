@@ -25,13 +25,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 # $(call inherit-product, vendor/pb/config/common.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/recovery/root,recovery/root)
-
-
-# COPY PREPDECRYPT FROM QCOM-TWRP_COMMON
-PRODUCT_COPY_FILES += device/qcom/twrp-common/crypto/system/bin/prepdecrypt.sh:recovery/root/system/bin/prepdecrypt.sh
-
-
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := G0310WW
 PRODUCT_NAME := omni_G0310WW
